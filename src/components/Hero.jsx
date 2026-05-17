@@ -23,12 +23,12 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col space-y-6 text-center md:text-left"
         >
-          <p className="text-accent text-lg font-medium tracking-wide">Hello, I'm</p>
+          <p className="text-accent font-mono text-lg font-medium tracking-wide">Hello World, I'm</p>
           <h1 className="text-5xl md:text-7xl font-bold text-text-main leading-tight">
             {name}
           </h1>
           <h2 className="text-2xl md:text-4xl font-semibold text-text-muted">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-purple">
+            <span className="text-transparent font-mono bg-clip-text bg-gradient-to-r from-accent to-accent-purple">
               <Typewriter
                 words={typingRoles}
                 loop={true}
@@ -47,13 +47,13 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
             <a
               href="#projects"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-accent to-accent-purple text-text-main font-medium hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] flex items-center justify-center gap-2"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-accent to-accent-purple text-text-main font-medium hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(0,242,254,0.5)] flex items-center justify-center gap-2"
             >
               View Projects <FiArrowRight />
             </a>
             <a
               href="#contact"
-              className="px-8 py-3 rounded-full border border-gray-500 text-text-main font-medium hover:border-accent hover:text-accent transition-colors duration-300 flex items-center justify-center"
+              className="px-8 py-3 rounded-full border border-gray-500 text-text-main font-mono hover:border-accent hover:text-accent transition-colors duration-300 flex items-center justify-center hover:shadow-[0_0_15px_rgba(0,242,254,0.3)]"
             >
               Contact Me
             </a>
@@ -66,18 +66,18 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center md:justify-end"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-accent to-accent-purple shadow-[0_0_40px_rgba(139,92,246,0.4)] animate-[float_6s_ease-in-out_infinite]">
-            <div className="w-full h-full rounded-full overflow-hidden bg-primary border-4 border-primary">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-accent to-accent-purple shadow-[0_0_50px_rgba(0,242,254,0.4)] animate-[float_6s_ease-in-out_infinite]">
+            <div className="w-full h-full rounded-full overflow-hidden bg-bg-alt border-4 border-accent">
               {!imageError ? (
                 <img
                   src={imagePath}
                   alt={name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
                   onError={() => setImageError(true)}
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gray-800 text-6xl text-text-muted/80 font-bold">
-                  {name.charAt(0)}
+                <div className="w-full h-full flex items-center justify-center bg-gray-900 text-6xl text-accent font-mono font-bold">
+                  {"</>"}
                 </div>
               )}
             </div>

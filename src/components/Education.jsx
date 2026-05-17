@@ -28,16 +28,16 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="glass-panel p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start hover:border-accent/30 transition-colors"
+              className="glass-panel neon-glow p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start hover:border-accent/50 transition-all duration-300"
             >
-              <div className="p-4 bg-accent/10 rounded-full text-accent shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+              <div className="p-4 bg-accent/10 rounded-full text-accent shadow-[0_0_15px_rgba(0,242,254,0.4)]">
                 <FiBookOpen size={32} />
               </div>
               
               <div>
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                   <h3 className="text-2xl font-bold text-text-main">{edu.degree}</h3>
-                  <span className="text-accent-purple font-medium mt-1 md:mt-0">{edu.period}</span>
+                  <span className="text-accent font-mono font-medium mt-1 md:mt-0">{edu.period}</span>
                 </div>
                 <h4 className="text-lg text-text-muted/80 font-medium mb-4">{edu.institution}</h4>
                 <p className="text-text-muted leading-relaxed">

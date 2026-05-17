@@ -18,14 +18,29 @@ const About = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-purple mx-auto mb-10 rounded-full"></div>
           
-          <div className="glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden">
+          <div className="terminal-window text-left mx-auto relative z-10 max-w-3xl group transition-transform duration-500 hover:scale-[1.02]">
             {/* Decorative background blur */}
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-accent/20 rounded-full mix-blend-screen filter blur-3xl"></div>
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent-purple/20 rounded-full mix-blend-screen filter blur-3xl"></div>
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-accent/20 rounded-full mix-blend-screen filter blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <p className="text-text-muted text-lg md:text-xl leading-relaxed relative z-10">
-              {portfolioData.about.summary}
-            </p>
+            <div className="terminal-header">
+              <div className="terminal-dot dot-red"></div>
+              <div className="terminal-dot dot-yellow"></div>
+              <div className="terminal-dot dot-green"></div>
+              <div className="terminal-title">mohamad_about.sh</div>
+            </div>
+            <div className="terminal-body relative z-10">
+              <div className="mb-4">
+                <span className="terminal-prompt"></span>
+                <span className="terminal-command">cat summary.txt</span>
+              </div>
+              <p className="text-gray-300 text-base md:text-lg">
+                {portfolioData.about.summary}
+              </p>
+              <div className="mt-4 flex items-center">
+                <span className="terminal-prompt"></span>
+                <span className="w-2.5 h-5 bg-accent animate-pulse inline-block ml-1"></span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

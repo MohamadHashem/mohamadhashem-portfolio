@@ -7,7 +7,7 @@ import { TbMathFunction } from 'react-icons/tb';
 
 const getSkillIcon = (skillName) => {
   const name = skillName.toLowerCase();
-  if (name.includes('react')) return <FaReact className="text-[#61DAFB]" />;
+  if (name.includes('react')) return <FaReact className="text-[#00f2fe]" />;
   if (name.includes('html')) return <FaHtml5 className="text-[#E34F26]" />;
   if (name.includes('css')) return <FaCss3Alt className="text-[#1572B6]" />;
   if (name.includes('flutter')) return <SiFlutter className="text-[#02569B]" />;
@@ -44,23 +44,23 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.05 }}
-              className="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300 border border-[var(--panel-border)] hover:border-accent/50"
+              className="glass-panel neon-glow rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group transition-all duration-300"
             >
-              <div className="text-5xl group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
+              <div className="text-5xl group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(0,242,254,0.6)] transition-all duration-300 drop-shadow-lg">
                 {getSkillIcon(skill.name)}
               </div>
-              <h3 className="text-lg font-medium text-text-muted">{skill.name}</h3>
+              <h3 className="text-lg font-mono font-medium text-text-muted group-hover:text-accent transition-colors">{skill.name}</h3>
               
-              {/* Optional Progress Bar approach */}
-              <div className="w-full bg-gray-700 h-2 rounded-full mt-2 overflow-hidden">
+              {/* Progress Bar approach */}
+              <div className="w-full bg-gray-800 h-2 rounded-full mt-2 overflow-hidden border border-gray-700">
                 <motion.div 
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="h-full bg-gradient-to-r from-accent to-accent-purple rounded-full relative"
+                  className="h-full bg-gradient-to-r from-accent to-accent-purple rounded-full relative shadow-[0_0_10px_rgba(0,242,254,0.8)]"
                 >
-                  <span className="absolute -top-6 right-0 text-xs text-text-muted/80 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="absolute -top-6 right-0 text-xs font-mono text-accent opacity-0 group-hover:opacity-100 transition-opacity">
                     {skill.level}%
                   </span>
                 </motion.div>

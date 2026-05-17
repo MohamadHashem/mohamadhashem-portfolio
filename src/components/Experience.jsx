@@ -22,12 +22,12 @@ const Experience = () => {
 
         <div className="relative border-l-2 border-accent/30 pl-8 ml-4 md:ml-0 md:pl-0 md:border-l-0">
           {/* Central line for desktop */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-accent/30"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent to-accent-purple opacity-50 shadow-[0_0_10px_rgba(0,242,254,0.5)]"></div>
 
           {portfolioData.experience.map((exp, index) => (
             <div key={exp.id} className={`mb-12 relative md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:ml-0 text-left md:text-right' : 'md:pl-12 md:ml-auto text-left'} `}>
               {/* Timeline dot */}
-              <div className={`absolute top-0 w-10 h-10 bg-primary border-4 border-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_10px_rgba(59,130,246,0.5)] 
+              <div className={`absolute top-0 w-10 h-10 bg-[#0f172a] border-2 border-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_15px_rgba(0,242,254,0.6)] 
                 -left-13 md:-left-5
                 ${index % 2 === 0 ? 'md:left-auto md:-right-5' : 'md:-left-5'}
               `}>
@@ -39,9 +39,9 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="glass-panel p-6 rounded-2xl hover:-translate-y-1 transition-transform duration-300 group"
+                className="glass-panel neon-glow p-6 rounded-2xl hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="inline-block px-3 py-1 bg-accent/10 text-accent border border-accent/20 rounded-full text-sm font-medium mb-3">
+                <div className="inline-block px-3 py-1 bg-accent/10 text-accent border border-accent/30 font-mono rounded-md shadow-[0_0_5px_rgba(0,242,254,0.2)] text-sm font-medium mb-3">
                   {exp.period}
                 </div>
                 <h3 className="text-2xl font-bold text-text-main mb-1 group-hover:text-accent transition-colors">

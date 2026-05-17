@@ -45,13 +45,13 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="glass-panel p-6 rounded-2xl flex flex-col items-center text-center group hover:border-accent/50 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] neon-glow"
+              className="glass-panel neon-glow p-6 rounded-2xl flex flex-col items-center text-center group hover:border-accent/50 transition-all duration-300"
             >
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-text-main transition-colors duration-300 shadow-inner">
+              <div className="w-16 h-16 bg-bg-alt rounded-full flex items-center justify-center mb-4 text-accent border border-accent/30 group-hover:bg-accent group-hover:text-text-main group-hover:shadow-[0_0_15px_rgba(0,242,254,0.6)] transition-all duration-300 shadow-inner">
                 {contact.icon}
               </div>
               <h3 className="text-lg font-bold text-text-main mb-2">{contact.title}</h3>
-              <p className="text-text-muted/80 text-sm">{contact.value}</p>
+              <p className="text-text-muted/80 text-sm font-mono">{contact.value}</p>
             </motion.a>
           ))}
         </div>

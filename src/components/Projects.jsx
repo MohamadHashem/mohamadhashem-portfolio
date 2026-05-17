@@ -28,20 +28,22 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="glass-panel rounded-2xl overflow-hidden group hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-500 flex flex-col"
+              className="glass-panel neon-glow rounded-2xl overflow-hidden group flex flex-col relative z-10"
             >
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-60 overflow-hidden border-b border-[var(--panel-border)]">
                 <div className="absolute inset-0 bg-accent/20 group-hover:opacity-0 transition-opacity duration-300 z-10"></div>
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700"
                 />
+                {/* Tech overlay grid on image */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(0,242,254,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,242,254,0.1)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none z-20 opacity-50 mix-blend-overlay"></div>
               </div>
               
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold text-text-main mb-3 group-hover:text-accent-purple transition-colors">
-                  {project.title}
+              <div className="p-8 flex flex-col flex-grow bg-bg-base/50">
+                <h3 className="text-2xl font-bold text-text-main mb-3 group-hover:text-accent transition-colors flex items-center gap-2">
+                  <span className="text-accent text-lg">{">_"}</span> {project.title}
                 </h3>
                 <p className="text-text-muted mb-6 flex-grow">
                   {project.description}
@@ -49,7 +51,7 @@ const Projects = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-medium bg-secondary text-accent-purple rounded-full border border-accent-purple/20">
+                    <span key={i} className="px-3 py-1 text-xs font-mono font-medium bg-accent/10 text-accent rounded border border-accent/30 shadow-[0_0_5px_rgba(0,242,254,0.2)]">
                       {tech}
                     </span>
                   ))}
@@ -60,17 +62,17 @@ const Projects = () => {
                     href={project.githubLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-text-muted/80 hover:text-text-main flex items-center gap-2 transition-colors"
+                    className="text-text-muted hover:text-accent flex items-center gap-2 transition-colors font-mono text-sm"
                   >
-                    <FiGithub size={20} /> <span className="text-sm font-medium">Code</span>
+                    <FiGithub size={18} /> [Code]
                   </a>
                   <a 
                     href={project.liveLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-text-muted/80 hover:text-text-main flex items-center gap-2 transition-colors ml-auto"
+                    className="text-text-muted hover:text-accent flex items-center gap-2 transition-colors ml-auto font-mono text-sm"
                   >
-                    <FiExternalLink size={20} /> <span className="text-sm font-medium">Live Demo</span>
+                    <FiExternalLink size={18} /> [Live_Demo]
                   </a>
                 </div>
               </div>

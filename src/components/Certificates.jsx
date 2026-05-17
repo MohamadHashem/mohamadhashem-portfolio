@@ -29,17 +29,17 @@ const Certificates = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="glass-panel p-6 rounded-xl flex items-center gap-6 group hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all"
+              className="glass-panel neon-glow p-6 rounded-xl flex items-center gap-6 group transition-all duration-300"
             >
-              <div className="p-3 bg-accent-purple/10 text-accent-purple rounded-lg group-hover:scale-110 transition-transform">
+              <div className="p-3 bg-accent/10 text-accent rounded-lg group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(0,242,254,0.3)]">
                 <FiAward size={28} />
               </div>
               
               <div>
                 <h3 className="text-lg font-bold text-text-main group-hover:text-accent transition-colors">{cert.title}</h3>
-                <div className="flex items-center gap-2 mt-1 text-sm text-text-muted/80">
-                  <span className="font-medium">{cert.issuer}</span>
-                  <span>&bull;</span>
+                <div className="flex items-center gap-2 mt-1 text-sm font-mono text-text-muted/80">
+                  <span className="font-medium text-accent-purple">{cert.issuer}</span>
+                  <span className="text-accent">&bull;</span>
                   <span>{cert.date}</span>
                 </div>
               </div>
