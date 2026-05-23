@@ -1,16 +1,62 @@
-# React + Vite
+# Mohamad Hashem Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern portfolio website built with **React**, **Vite**, and **Tailwind CSS**, automatically deployed to GitHub Pages.
 
-Currently, two official plugins are available:
+🌐 **Live Site:** https://mohamadhashem.github.io/mohamadhashem-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Quick Start
 
-## React Compiler
+### Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+The app runs on `http://localhost:5173` with hot module reloading.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Build & Deploy
+
+```bash
+npm run deploy
+```
+
+This builds the project and deploys to GitHub Pages via `gh-pages`.
+
+## Automatic Deployment
+
+The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that:
+- ✅ Automatically builds on every push to `main`
+- ✅ Deploys to GitHub Pages
+- ✅ Uses Node.js 18 with cached dependencies
+
+## Project Structure
+
+```
+src/
+├── components/    # React components
+├── data/         # Portfolio data
+├── App.jsx       # Main app component
+├── index.css     # Global styles
+└── main.jsx      # Entry point
+```
+
+## Tech Stack
+
+- **React** 19.2 - UI library
+- **Vite** 8.0 - Build tool & dev server
+- **Tailwind CSS** 4.3 - Utility-first CSS
+- **Framer Motion** - Animations
+- **React Icons** - Icon library
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run deploy` - Build and deploy to GitHub Pages
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## Configuration
+
+The `base` path in `vite.config.js` is set to `/mohamadhashem-portfolio/` to work correctly with GitHub Pages subpath deployment.
