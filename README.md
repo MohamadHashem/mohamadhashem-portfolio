@@ -28,7 +28,7 @@ This builds the project and deploys to GitHub Pages via `gh-pages`.
 The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that:
 - ✅ Automatically builds on every push to `main`
 - ✅ Deploys to GitHub Pages
-- ✅ Uses Node.js 18 with cached dependencies
+- ✅ Uses Node.js 18 with Node.js 24-compatible GitHub Actions
 
 ## Project Structure
 
