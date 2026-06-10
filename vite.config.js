@@ -5,5 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/mohamadhashem-portfolio/',
-  plugins: [react(), tailwindcss()],
+  plugins: [react({ fastRefresh: true }), tailwindcss()],
+  server: {
+    middlewareMode: false,
+    hmr: true,
+  },
 })
